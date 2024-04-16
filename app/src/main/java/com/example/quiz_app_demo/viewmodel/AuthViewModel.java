@@ -32,8 +32,8 @@ public class AuthViewModel extends AndroidViewModel {
         firebaseUserMutableLiveData=repository.getFirebaseUserMutableLiveData();
     }
 
-    public void signUp(String email, String pass){
-        repository.signUp(email, pass);
+    public void signUp(String email, String pass, String username){
+        repository.signUp(email, pass, username);
     }
     public void signIn(String email, String pass){
         repository.signIn(email, pass);

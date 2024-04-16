@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_rankFragment"
+            app:destination="@id/rankFragment" />
     </fragment>
     <fragment
         android:id="@+id/signinFragment"
@@ -96,4 +102,29 @@
             app:argType="string"
             android:defaultValue="null" />
     </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.quiz_app_demo.views.AccountFragment"
+        android:label="fragment_account2"
+        tools:layout="@layout/fragment_account2" >
+        <action
+            android:id="@+id/action_accountFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_rankFragment"
+            app:destination="@id/rankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankFragment"
+        android:name="com.example.quiz_app_demo.views.RankFragment"
+        android:label="fragment_rank"
+        tools:layout="@layout/fragment_rank" >
+        <action
+            android:id="@+id/action_rankFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_rankFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+
 </navigation>

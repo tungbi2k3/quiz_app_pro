@@ -28,7 +28,7 @@ public class SignUpFragment extends Fragment {
 
     private AuthViewModel viewModel;
     private NavController navController;
-    private EditText editEmail, editPass;
+    private EditText editEmail, editPass, editUsername;
     private TextView signInText;
     private Button signUpBtn;
 
@@ -45,6 +45,7 @@ public class SignUpFragment extends Fragment {
 
         navController= Navigation.findNavController(view);
         editEmail=view.findViewById(R.id.editEmailSignUp);
+        editUsername=view.findViewById(R.id.editUsername);
         editPass=view.findViewById(R.id.editPassSignUp);
         signInText=view.findViewById(R.id.signInText);
         signUpBtn=view.findViewById(R.id.signUpBtn);
@@ -61,8 +62,9 @@ public class SignUpFragment extends Fragment {
             public void onClick(View v) {
                 String email =editEmail.getText().toString();
                 String pass=editPass.getText().toString();
-                if (!email.isEmpty()&& !pass.isEmpty()){
-                    viewModel.signUp(email,pass);
+                String username=editUsername.getText().toString();
+                if (!email.isEmpty()&& !pass.isEmpty()&& !username.isEmpty()){
+                    viewModel.signUp(email,pass,username);
                     Toast.makeText(getContext(),"Registered Successfully",Toast.LENGTH_SHORT).show();
                     viewModel.getFirebaseUserMutableLiveData().observe(getViewLifecycleOwner(), new Observer<FirebaseUser>() {
                         @Override

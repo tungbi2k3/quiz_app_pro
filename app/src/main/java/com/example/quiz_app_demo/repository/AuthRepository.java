@@ -33,7 +33,7 @@ public class AuthRepository {
         firebaseAuth =FirebaseAuth.getInstance();
     }
 
-     public void signUp(String email, String pass){
+     public void signUp(String email, String pass, String username){
         firebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {

@@ -6,17 +6,17 @@
         android:layout_height="wrap_content"
         android:title="Home"
         android:icon="@drawable/home_0"
-        android:id="@+id/list_fragment" />
+        android:id="@+id/navHome" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Rank"
         android:icon="@drawable/rank_24"
-        android:id="@+id/rank_fragment"/>
+        android:id="@+id/navRank"/>
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Account"
         android:icon="@drawable/account_24"
-        android:id="@+id/account_fragment"/>
+        android:id="@+id/navAccount"/>
 </menu>
