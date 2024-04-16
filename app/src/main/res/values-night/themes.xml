@@ -3,5 +3,7 @@
     <style name="Base.Theme.Quiz_app_demo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="itemIconTint">@color/blue_200</item>
+        <item name="itemTextColor">@color/blue_200</item>
     </style>
 </resources>

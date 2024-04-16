@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Quiz_app_demo" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue_200</item>
+        <item name="colorPrimaryDark">@color/blue_500</item>
+        <item name="colorAccent">@color/blue</item>
     </style>
 
     <style name="Theme.Quiz_app_demo" parent="Base.Theme.Quiz_app_demo" />

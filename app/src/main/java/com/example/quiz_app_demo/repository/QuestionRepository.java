@@ -84,7 +84,6 @@ public class QuestionRepository {
         });
     }
 
-
     public interface OnQuestionLoad{
         void onLoad(List<QuestionModel> questionModels);
         void onError(Exception e);

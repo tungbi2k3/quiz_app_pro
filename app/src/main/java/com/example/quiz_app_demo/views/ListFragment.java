@@ -37,6 +37,7 @@ public class ListFragment extends Fragment implements QuizListAdapter.OnItemClic
     private QuizListAdapter adapter;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
