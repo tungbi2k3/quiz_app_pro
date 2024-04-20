@@ -46,6 +46,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private int notAnswerd = 0;
     private int correctAnswer = 0;
     private int wrongAnswer = 0;
+    private long score = 0;
     private String answer = "";
 
 
@@ -215,10 +216,15 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void submitResults() {
+
+        int total = correctAnswer + wrongAnswer + notAnswerd;
+        score = (correctAnswer*100)/total;
+
         HashMap<String , Object> resultMap = new HashMap<>();
         resultMap.put("correct" , correctAnswer);
         resultMap.put("wrong" , wrongAnswer);
         resultMap.put("notAnswered" , notAnswerd);
+        resultMap.put("Score" , score);
 
         viewModel.addResults(resultMap);
         QuizFragmentDirections.ActionQuizFragmentToResultFragment action=QuizFragmentDirections.actionQuizFragmentToResultFragment();

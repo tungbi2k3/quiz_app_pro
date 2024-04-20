@@ -52,6 +52,7 @@ public class SplashFragment extends Fragment {
         signUpBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 navController.navigate(R.id.action_splashFragment_to_signUpFragment);
             }
         });
