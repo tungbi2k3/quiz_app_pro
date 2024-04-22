@@ -1,7 +1,7 @@
 package com.example.quiz_app_demo.model;
 public class ResultModel {
 
-    private int correct ,wrong, notAnswered;
+    private int correct ,wrong, notAnswered,score;
 
     public ResultModel(){}
 
@@ -15,5 +15,17 @@ public class ResultModel {
 
     public int getNotAnswered() {
         return notAnswered;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public ResultModel(int score) {
+        this.score = score;
     }
 }

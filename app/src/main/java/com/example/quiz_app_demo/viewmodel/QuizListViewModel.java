@@ -25,7 +25,6 @@ public class QuizListViewModel extends ViewModel implements QuizListRepository.o
     public void quizDataLoad(List<QuizListModel> quizListModels) {
         quizListLiveData.setValue(quizListModels);
     }
-
     @Override
     public void onError(Exception e) {
         Log.d("QuizERROR", "onError: " + e.getMessage());

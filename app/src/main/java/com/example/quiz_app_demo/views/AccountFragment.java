@@ -60,7 +60,7 @@ public class AccountFragment extends Fragment {
                     bottomNavigationView.setItemTextColor(ContextCompat.getColorStateList(getContext(), R.color.blue_200));
                     return true;
                 } else if (item.getItemId() == R.id.navRank) {
-                    navController1.navigate(R.id.action_accountFragment_to_rankFragment);
+                    navController1.navigate(R.id.action_accountFragment_to_HistoryFragment);
                     return true;
                 } else if (item.getItemId() == R.id.navHome){
                     navController1.navigate(R.id.action_accountFragment_to_listFragment);
@@ -75,15 +75,6 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 navController1.navigate(R.id.action_accountFragment_to_splashFragment);
-            }
-        });
-
-        viewModel.getResults();
-        viewModel.getResultMutableLiveData().observe(getViewLifecycleOwner(), new Observer<HashMap<String, Long>>() {
-            @Override
-            public void onChanged(HashMap<String, Long> stringLongHashMap) {
-
-
             }
         });
     }

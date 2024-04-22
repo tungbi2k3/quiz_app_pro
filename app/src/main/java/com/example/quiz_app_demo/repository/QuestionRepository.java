@@ -35,6 +35,7 @@ public class QuestionRepository {
                             resultMap.put("correct" , task.getResult().getLong("correct"));
                             resultMap.put("wrong" , task.getResult().getLong("wrong"));
                             resultMap.put("notAnswered" , task.getResult().getLong("notAnswered"));
+                            resultMap.put("Score" , task.getResult().getLong("Score"));
                             onResultLoad.onResultLoad(resultMap);
                         }else{
                             onResultLoad.onError(task.getException());

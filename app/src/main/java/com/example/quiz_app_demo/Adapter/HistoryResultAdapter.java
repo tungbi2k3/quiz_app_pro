@@ -14,37 +14,38 @@ import com.bumptech.glide.Glide;
 import com.example.quiz_app_demo.R;
 import com.example.quiz_app_demo.model.QuizListModel;
 import com.example.quiz_app_demo.model.ResultModel;
-import com.example.quiz_app_demo.views.ListFragment;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizListViewHolder> {
-
-    private List<QuizListModel> quizListModels;
+public class HistoryResultAdapter extends RecyclerView.Adapter<HistoryResultAdapter.ViewHolder> {
     private OnItemClickedListner onItemClickedListner;
+    private List<QuizListModel> quizListModels;
 
-    public QuizListAdapter(OnItemClickedListner onItemClickedListner) {
+
+    public HistoryResultAdapter(OnItemClickedListner onItemClickedListner) {
         this.onItemClickedListner = onItemClickedListner;
     }
 
     public void setQuizListModels(List<QuizListModel> quizListModels) {
         this.quizListModels = quizListModels;
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public QuizListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.each_quiz,parent,false);
-        return new QuizListViewHolder(view);
+    public HistoryResultAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.each_quiz_result,parent,false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuizListViewHolder holder, int position) {
-        QuizListModel model=quizListModels.get(position);
-        holder.title.setText(model.getTitle());
-        Glide.with(holder.itemView).load(model.getImage()).into(holder.quizImage);
+    public void onBindViewHolder(@NonNull HistoryResultAdapter.ViewHolder holder, int position) {
+
+        if (quizListModels != null) {
+            QuizListModel model = quizListModels.get(position);
+            holder.title.setText(model.getTitle());
+            Glide.with(holder.itemView).load(model.getImage()).into(holder.quizImage);
+        }
     }
 
     @Override
@@ -54,20 +55,21 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizLi
         }else{
             return quizListModels.size();
         }
-
     }
 
 
 
-    public class QuizListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView title;
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        private TextView title, score;
         private ImageView quizImage;
         private ConstraintLayout constraintLayout;
-        public QuizListViewHolder(@NotNull  View itemView){
-            super(itemView);
+        public ViewHolder(@NonNull View itemView) {
 
-            title=itemView.findViewById(R.id.quizTitleList);
-            quizImage= itemView.findViewById(R.id.quizImageList);
+            super(itemView);
+            title=itemView.findViewById(R.id.quizTitleList1);
+            quizImage= itemView.findViewById(R.id.imageView1);
+
             constraintLayout=itemView.findViewById(R.id.constraintLayout);
             constraintLayout.setOnClickListener(this);
         }
@@ -77,8 +79,7 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.QuizLi
             onItemClickedListner.onItemClick(getAdapterPosition());
         }
     }
-    public interface OnItemClickedListner{
+    public interface OnItemClickedListner {
         void onItemClick(int position);
     }
-
 }

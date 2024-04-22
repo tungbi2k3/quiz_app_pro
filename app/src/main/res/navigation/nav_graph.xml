@@ -32,8 +32,12 @@
             android:id="@+id/action_listFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
         <action
-            android:id="@+id/action_listFragment_to_rankFragment"
-            app:destination="@id/rankFragment" />
+            android:id="@+id/action_listFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/signinFragment"
@@ -88,6 +92,9 @@
             android:name="totalQueCount"
             app:argType="long"
             android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_quizFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -101,6 +108,10 @@
             android:name="quizId"
             app:argType="string"
             android:defaultValue="null" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -111,23 +122,49 @@
             android:id="@+id/action_accountFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <action
-            android:id="@+id/action_accountFragment_to_rankFragment"
-            app:destination="@id/rankFragment" />
-        <action
             android:id="@+id/action_accountFragment_to_splashFragment"
             app:destination="@id/splashFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
     </fragment>
     <fragment
-        android:id="@+id/rankFragment"
-        android:name="com.example.quiz_app_demo.views.RankFragment"
-        android:label="fragment_rank"
-        tools:layout="@layout/fragment_rank" >
+        android:id="@+id/HistoryFragment"
+        android:name="com.example.quiz_app_demo.views.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history" >
+
         <action
-            android:id="@+id/action_rankFragment_to_listFragment"
+            android:id="@+id/action_HistoryFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_HistoryFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <action
-            android:id="@+id/action_rankFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            android:id="@+id/action_HistoryFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+        <argument
+            android:name="quizId"
+            app:argType="string"
+            android:defaultValue="null" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.example.quiz_app_demo.views.ReviewFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/fragment_review">
+        <action
+            android:id="@+id/action_reviewFragment_to_HistoryFragment"
+            app:destination="@id/HistoryFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="quizId"
+            app:argType="string"
+            android:defaultValue="null" />
     </fragment>
 
 </navigation>
