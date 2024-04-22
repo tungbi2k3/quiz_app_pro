@@ -42,7 +42,10 @@ public class QuestionViewModel extends ViewModel implements QuestionRepository.O
         repository.setQuizId(quizId);
 
     }
+    public void setCurrentUserId(String currentUserId){
+        repository.setCurrentUserId(currentUserId);
 
+    }
     public void getQuestions (){
         repository.getQuestions();
     }

@@ -64,6 +64,9 @@ public class QuestionRepository {
     public void setQuizId(String quizId){
         this.quizId=quizId;
     }
+    public void setCurrentUserId(String currentUserId){
+        this.currentUserId=currentUserId;
+    }
 
     public QuestionRepository(OnQuestionLoad onQuestionLoad,OnResultAdded onResultAdded,OnResultLoad onResultLoad){
         firebaseFirestore=FirebaseFirestore.getInstance();

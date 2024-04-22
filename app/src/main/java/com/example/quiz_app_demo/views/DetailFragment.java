@@ -37,7 +37,7 @@ public class DetailFragment extends Fragment {
     private ProgressBar progressBar;
     private QuizListViewModel viewModel;
     private ImageView topicImage;
-    private String quizId;
+    private String quizId,currentUserId;
     private long totalQueCount;
 
     @Override
@@ -85,6 +85,7 @@ public class DetailFragment extends Fragment {
 
                 totalQueCount = quiz.getQuestions();
                 quizId = quiz.getQuizId();
+
             }
         });
 

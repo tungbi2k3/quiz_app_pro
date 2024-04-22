@@ -29,7 +29,7 @@ public class ReviewFragment extends Fragment {
     private TextView correctAnswer , wrongAnswer , notAnswered;
     private TextView scoreTv,judgement;
     private ProgressBar scoreProgressbar;
-    private String quizId;
+    private String quizId, currentUserId;
     private Button backBtn;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,7 +57,8 @@ public class ReviewFragment extends Fragment {
         scoreProgressbar = view.findViewById(R.id.resultCoutProgressBar);
         backBtn = view.findViewById(R.id.back_btn);
 
-        quizId = ResultFragmentArgs.fromBundle(getArguments()).getQuizId();
+        quizId = ReviewFragmentArgs.fromBundle(getArguments()).getQuizId();
+
         viewModel.setQuizId(quizId);
         viewModel.getResults();
         backBtn.setOnClickListener(new View.OnClickListener() {

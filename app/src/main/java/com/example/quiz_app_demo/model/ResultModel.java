@@ -21,11 +21,4 @@ public class ResultModel {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public ResultModel(int score) {
-        this.score = score;
-    }
 }
